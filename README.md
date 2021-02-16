@@ -14,9 +14,7 @@ There is a dependency on the iwd package. You will be asked to install it if the
 
 ### Usage
 
-`wifi help`   - Print the useful information you see below.
-
-`wifi connect [SSID]`   - Default parameter. Select and connect to a wifi network.
+`wifi [connect] [SSID]`   - Default parameter. Select and connect to a wifi network.
 
 `wifi disconnect`   - Disconnect the current wifi connection.
 
@@ -25,6 +23,8 @@ There is a dependency on the iwd package. You will be asked to install it if the
 `wifi status`   - Show current connection status.
 
 `wifi reset`   - Bring wifi interface down, then up again. User requires 'sudo' permissions.
+
+`wifi help`   - Print the useful information you see here.
 
 ### Bugs
 If you kill the process (with CTRL+c for example) while entering the password for a wifi network, you will not be able to connect to it in the future. Instead of being asked for the password again, you will see the message "Operation already in progress."
