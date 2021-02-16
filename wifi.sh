@@ -21,7 +21,7 @@ then
 	printf "\n"
 	printf " wifi parameters\n"
 	printf "=================\n\n"
-	printf "wifi connect [SSID]\n"
+	printf "wifi [connect] [SSID]\n"
 	printf "    Default parameter. Select and connect to a wifi network.\n\n"
 	printf "wifi disconnect\n"
 	printf "    Disconnect the current wifi connection.\n\n"
