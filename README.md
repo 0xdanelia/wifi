@@ -1,19 +1,32 @@
+# wifi
+A simple tool to manage wifi connections from the linux command line. It automatically selects and brings up your wireless interface, then scans for wifi signals and uses dmenu to display a list of available networks along with their signal strength. After selecting a network it will connect to it, prompting for a password if required.
 
- wifi parameters
-=================
+There is also functionality for disconnecting from wifi and forgetting known networks, as well as resetting the wireless interface (useful to fix a bug explained below).
 
-wifi connect [SSID]
-    Default parameter. Select and connect to a wifi network.
+### Installation
+It's just a single bash script. You can copy the text right from your browser into your favorite text editor. Or use `git clone`.
+I prefer to put this script somewhere in my $PATH so I can call it from anywhere. I also prefer to remove the ".sh" extension.
+```
+git clone https://github.com/0xdanelia/wifi
+cp wifi/wifi.sh /usr/local/bin/wifi
+```
+There is a dependency on the iwd package. You will be asked to install it if the script cannot find the `iwctl` command.
 
-wifi disconnect
-    Disconnect the current wifi connection.
+### Usage
 
-wifi forget [SSID]
-    Forget name and password of known network.
+`wifi help`   - Print the useful information you see below.
 
-wifi status
-    Show current connection status.
+`wifi connect [SSID]`   - Default parameter. Select and connect to a wifi network.
 
-wifi reset
-    Bring wifi interface down, then up again. User requires 'sudo' permissions.
+`wifi disconnect`   - Disconnect the current wifi connection.
 
+`wifi forget [SSID]`   - Forget name and password of known network.
+
+`wifi status`   - Show current connection status.
+
+`wifi reset`   - Bring wifi interface down, then up again. User requires 'sudo' permissions.
+
+### Bugs
+If you kill the process (with CTRL+c for example) while entering the password for a wifi network, you will not be able to connect to it in the future. Instead of being asked for the password again, you will see the message "Operation already in progress."
+
+To fix this issue, simply call `wifi reset` and try to connect again.
