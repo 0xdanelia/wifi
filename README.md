@@ -4,12 +4,21 @@ A simple tool to manage wifi connections from the linux command line. It automat
 There is also functionality for disconnecting from wifi and forgetting known networks, as well as resetting the wireless interface (useful to fix a bug explained below).
 
 ### Installation
-It's just a single bash script. You can copy the text right from your browser into your favorite text editor. Or use `git clone`.
-I prefer to put this script somewhere in my $PATH so I can call it from anywhere. I also prefer to remove the ".sh" extension.
+It's just a single bash script. You can copy the text right from your browser into your favorite text editor.
+To copy wifi into `/usr/local/bin` you can run the install script.
 ```
 git clone https://github.com/0xdanelia/wifi
-cp wifi/wifi.sh /usr/local/bin/wifi
+cd wifi
+./install.sh
 ```
+There is also a version that uses my very own cmenu instead of dmenu if you have it installed.
+> https://github.com/0xdanelia/cmenu
+```
+git clone https://github.com/0xdanelia/wifi
+cd wifi
+./install-cmenu.sh
+```
+
 There is a dependency on the iwd package. You will be asked to install it if the script cannot find the `iwctl` command.
 
 ### Usage
